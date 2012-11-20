@@ -82,3 +82,97 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 let g:rbpt_max = 16
+
+
+" tabbar
+let g:Tb_MaxSize = 2
+let g:Tb_TabWrap = 1
+hi Tb_Normal guifg=white ctermfg=white
+hi Tb_Changed guifg=green ctermfg=green
+hi Tb_VisibleNormal ctermbg=252 ctermfg=235
+
+" easy-motion
+let g:EasyMotion_leader_key = '<Leader>'
+
+ " Tagbar
+ let g:tagbar_left=1
+ let g:tagbar_width=30
+ let g:tagbar_autofocus = 1
+ let g:tagbar_sort = 0 
+ let g:tagbar_compact = 1
+
+" Nerd Tree 
+let NERDChristmasTree=0
+let NERDTreeWinSize=30
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos = ""
+
+" NeoComplCache
+let g:neocomplcache_enable_at_startup=1
+let g:neoComplcache_disableautocomplete=1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+set completeopt-=preview
+
+imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+" SuperTab
+"let g:SuperTabDefultCompletionType='context'
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabRetainCompletionType=2
+
+" ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
+" Keybindings for plugin toggle
+nmap <F5> :TagbarToggle<cr>
+nmap <F6> :NERDTreeToggle<cr>
+nmap <F3> :GundoToggle<cr>
+nmap <F4> :IndentGuidesToggle<cr>
+nnoremap <leader>a :Ack
+nnoremap <leader>v V`]
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" eggcache vim
+:command W w
+:command WQ wq
+:command Wq wq
+:command Q q
+:command Qa qa
+:command QA qa
+
+if has("gui_running")
+    set go=aAce  " remove toolbar
+   " set transparency=30
+    set guifont=Monaco:h13
+    set showtabline=2
+    set columns=140
+    set lines=40
+    noremap <D-M-Left> :tabprevious<cr>
+    noremap <D-M-Right> :tabnext<cr>
+    map <D-1> 1gt
+    map <D-2> 2gt
+    map <D-3> 3gt
+    map <D-4> 4gt
+    map <D-5> 5gt
+    map <D-6> 6gt
+    map <D-7> 7gt
+    map <D-8> 8gt
+    map <D-9> 9gt
+    map <D-0> :tablast<CR>
+endif
