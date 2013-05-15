@@ -62,6 +62,8 @@ set shiftwidth=4    " indent width
 "set textwidth=79
 set expandtab       " expand tab to space
 
+autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -124,6 +126,8 @@ imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+let g:ackprg="<custom-ack-path-goes-here> -H --nocolor --nogroup --column"
 
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
